@@ -8,6 +8,8 @@ import alessiopanconi.u5w1d4.repositories.ToppingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ToppingService {
 
@@ -45,5 +47,9 @@ public class ToppingService {
         System.out.println("Il Topping con id: "+ id + " è stato eliminato correttamente");
     }
 
+    public List<Topping> findToppingsByName(List<String> names)
+    {
+        return toppingRepository.findByNameIn(names);
+    }
 
 }

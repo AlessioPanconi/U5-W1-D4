@@ -12,6 +12,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Component
 public class Runner implements CommandLineRunner {
 
@@ -71,18 +74,23 @@ public class Runner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        drinkService.saveDrink(lemonade);
-        drinkService.saveDrink(water);
-        drinkService.saveDrink(wine);
+//        drinkService.saveDrink(lemonade);
+//        drinkService.saveDrink(water);
+//        drinkService.saveDrink(wine);
+//
+//        toppingService.saveTopping(tomato);
+//        toppingService.saveTopping(cheese);
+//        toppingService.saveTopping(ham);
+//        toppingService.saveTopping(pineapple);
+//        toppingService.saveTopping(salami);
+//
+//        pizzaService.savePizza(pizzaMargherita);
+//        pizzaService.savePizza(salamiPizza);
+//        pizzaService.savePizza(hawaiianPizza);
 
-        toppingService.saveTopping(tomato);
-        toppingService.saveTopping(cheese);
-        toppingService.saveTopping(ham);
-        toppingService.saveTopping(pineapple);
-        toppingService.saveTopping(salami);
 
-        pizzaService.savePizza(pizzaMargherita);
-        pizzaService.savePizza(salamiPizza);
-        pizzaService.savePizza(hawaiianPizza);
+        List<String> listaTopping =new ArrayList<>(List.of("Ham","Pineapple"));
+
+        pizzaService.savePizza(new Pizza("schifezza",new ArrayList<>()),listaTopping);
     }
 }
