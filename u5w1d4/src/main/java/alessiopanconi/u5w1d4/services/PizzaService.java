@@ -14,7 +14,7 @@ public class PizzaService {
     @Autowired
     private PizzaRepository pizzaRepository;
 
-    public void saveDrink(Pizza newPizza)
+    public void savePizza(Pizza newPizza)
     {
         if (pizzaRepository.findByName(newPizza.getName()) != null) throw new ValidationException("Una pizza con questo nome: " + newPizza.getName() + " esiste già");
         pizzaRepository.save(newPizza);

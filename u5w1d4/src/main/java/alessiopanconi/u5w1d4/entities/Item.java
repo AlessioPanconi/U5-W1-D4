@@ -15,7 +15,7 @@ import lombok.Setter;
 public abstract class Item {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue
 	@Setter(AccessLevel.NONE)
 	private long id;
 	protected int calories;
